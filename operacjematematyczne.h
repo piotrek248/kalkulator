@@ -18,6 +18,11 @@ public:
     float mnozenie (float lew, float praw);
     float dodawanie (float lew, float praw);
     float odejmowanie (float lew, float praw);
+    float pierwiastkowanie (float lew, float praw);
+    float potega (float lew);
+    float potega_x (float lew, float praw);
+    float silnia (float lew);
+    float odwrotnosc (float lew);
 signals:
 
 };

@@ -89,6 +89,12 @@ void MainWindow::on_button_9_clicked()
     } else ui->wyswietlacz->insert("9");
 }
 
+void MainWindow::on_button_0_clicked()
+{
+    if(ui->wyswietlacz->text() != "0")
+    ui->wyswietlacz->insert("0");
+}
+
 void MainWindow::on_button_kropka_clicked()
 {
     ui->wyswietlacz->insert(".");
@@ -122,6 +128,21 @@ void MainWindow::on_button_razy_clicked()
     ui->wyswietlacz->clear();
 }
 
+void MainWindow::on_button_potega_x_clicked()
+{
+    lewa = ui->wyswietlacz->text().toFloat();
+    dzialanie = 5;
+    ui->wyswietlacz->clear();
+}
+
+void MainWindow::on_button_pierwiastek_clicked()
+{
+    lewa = ui->wyswietlacz->text().toFloat();
+    dzialanie = 6;
+    ui->wyswietlacz->clear();
+}
+
+
 void MainWindow::on_button_rowna_sie_clicked()
 {
     operacjeMatematyczne obiekt_operacje;
@@ -146,8 +167,16 @@ void MainWindow::on_button_rowna_sie_clicked()
         wynik = QString::number(obiekt_operacje.mnozenie(lewa, prawa));
         ui->wyswietlacz->setText(wynik);
         break;
-
-
+    case 5:
+        prawa = ui->wyswietlacz->text().toFloat();
+        wynik = QString::number(obiekt_operacje.potega_x(lewa, prawa));
+        ui->wyswietlacz->setText(wynik);
+        break;
+    case 6:
+        prawa = ui->wyswietlacz->text().toFloat();
+        wynik = QString::number(obiekt_operacje.pierwiastkowanie(lewa, prawa));
+        ui->wyswietlacz->setText(wynik);
+        break;
     }
 }
 
@@ -176,4 +205,30 @@ void MainWindow::on_button_memory_clicked()
      licznik++;
     } else licznik = 0;
 
+}
+
+void MainWindow::on_button_silnia_clicked()
+{
+    operacjeMatematyczne obiekt_operacje;
+    lewa = ui->wyswietlacz->text().toFloat();
+    wynik = QString::number(obiekt_operacje.silnia(lewa));
+    ui->wyswietlacz->setText(wynik);
+}
+
+
+void MainWindow::on_button_odwrotnosc_clicked()
+{
+    operacjeMatematyczne obiekt_operacje;
+    lewa = ui->wyswietlacz->text().toFloat();
+    wynik = QString::number(obiekt_operacje.odwrotnosc(lewa));
+    ui->wyswietlacz->setText(wynik);
+}
+
+
+void MainWindow::on_button_potega_2_clicked()
+{
+    operacjeMatematyczne obiek_operacje;
+    lewa = ui->wyswietlacz->text().toFloat();
+    wynik = QString::number(obiek_operacje.potega(lewa));
+    ui->wyswietlacz->setText(wynik);
 }

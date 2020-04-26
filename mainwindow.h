@@ -55,6 +55,18 @@ private slots:
 
     void on_button_memory_clicked();
 
+    void on_button_silnia_clicked();
+
+    void on_button_0_clicked();
+
+    void on_button_odwrotnosc_clicked();
+
+    void on_button_potega_x_clicked();
+
+    void on_button_potega_2_clicked();
+
+    void on_button_pierwiastek_clicked();
+
 private:
     Ui::MainWindow *ui;
     std::vector <float> pamiec;
