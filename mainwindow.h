@@ -69,6 +69,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    void keyPressEvent(QKeyEvent *event);
     std::vector <float> pamiec;
     unsigned long i = 0;
     unsigned long licznik =0;
